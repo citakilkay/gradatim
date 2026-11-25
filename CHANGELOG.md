@@ -8,7 +8,7 @@ Every notable change to Gradatim, newest first. The format follows [Keep a Chang
 
 - The cycle's table says more exactly what research, decide, architecture and demo do. A demo records the feature you ask for, or the whole UI.
 - `write-architecture` and `record-demo` describe themselves the same way. Architecture writes its documents from the stack and structure you choose and designs nothing on its own: it asks you about a choice that is hard to undo.
-- The README shows the cycle as a chart that names each step's skill, and its table gives an example call for each skill.
+- The README shows the cycle as a text chart that names each step's command, and its table gives an example call for each skill.
 
 ## [1.0.0] - 2026-11-25
 

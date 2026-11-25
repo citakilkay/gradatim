@@ -98,34 +98,36 @@ Fourteen steps in three phases, each run by its own skill.
 
 ```text
 1 · FOUNDATION (once)
-╭────────────────────╮   existing codebase: quick start
-│ 1 init             ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-│ init-project       │                                    ╎
-╰─────────┬──────────╯     2 · DELIVERY LOOP (per sprint) ╎
-          ▼                                               ▼
-╭────────────────────╮     ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
-│ 2 research         │ ╭──►│ 6 new sprint    ├──►│ 7 design task   ├──►│ 8 build task    │
-│ research-topics    │ │ ╭►│ new-sprint      │   │ design-task     │   │ build-task      │
-╰─────────┬──────────╯ │ ╎ ╰─────────────────╯   ╰─────────────────╯   ╰────────┬────────╯
-          ▼            │ ╎          ▲                     ▲                     │
-╭────────────────────╮ │ ╎          ╎ next sprint         ╎ next task           │
-│ 3 decide           │ │ ╎          ╎                     ╎                     ▼
-│ decide-direction   │ │ ╎ ╭────────┴────────╮   ╭────────┴────────╮   ╭─────────────────╮
-╰─────────┬──────────╯ │ ╎ │ 11 close sprint │◄──┤ 10 draft PR     │◄──┤ 9 close task    │
-          ▼            │ ╎ │ close-sprint    │   │ draft-pr        │   │ close-task      │
-╭────────────────────╮ │ ╎ ╰────────┬────────╯   ╰────────┬────────╯   ╰─────────────────╯
-│ 4 concept          │ │ ╎          │ something to ship   ╎ UI change
-│ write-concept      │ │ ╎          │                     ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-╰─────────┬──────────╯ │ ╎          │ 3 · SHIP & EVOLVE                         ╎
-          ▼            │ ╎          ▼                                           ▼
-╭────────────────────╮ │ ╎ ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
-│ 5 architecture     ├─╯ ╎ │ 12 release      ├──►│ 13 review       │   │ 14 demo         │
-│ write-architecture │   ╎ │ ship-release    │   │ review-project  │   │ record-demo     │
-╰────────────────────╯   ╎ ╰─────────────────╯   ╰────────┬────────╯   ╰─────────────────╯
-                         ╎  next sprint                   ╎
-                         ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
+╭─────────────────────╮   existing codebase: quick start
+│ 1 init              ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
+│ /init-project       │                                    ╎
+╰──────────┬──────────╯     2 · DELIVERY LOOP (per sprint) ╎
+           ▼                                               ▼
+╭─────────────────────╮     ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
+│ 2 research          │ ╭──►│ 6 new sprint    ├──►│ 7 design task   ├──►│ 8 build task    │
+│ /research-topics    │ │ ╭►│ /new-sprint     │   │ /design-task    │   │ /build-task     │
+╰──────────┬──────────╯ │ ╎ ╰─────────────────╯   ╰─────────────────╯   ╰────────┬────────╯
+           ▼            │ ╎          ▲                     ▲                     │
+╭─────────────────────╮ │ ╎          ╎ next sprint         ╎ next task           │
+│ 3 decide            │ │ ╎          ╎                     ╎                     ▼
+│ /decide-direction   │ │ ╎ ╭────────┴────────╮   ╭────────┴────────╮   ╭─────────────────╮
+╰──────────┬──────────╯ │ ╎ │ 11 close sprint │◄──┤ 10 draft PR     │◄──┤ 9 close task    │
+           ▼            │ ╎ │ /close-sprint   │   │ /draft-pr       │   │ /close-task     │
+╭─────────────────────╮ │ ╎ ╰────────┬────────╯   ╰────────┬────────╯   ╰─────────────────╯
+│ 4 concept           │ │ ╎          │ something to ship   ╎ UI change
+│ /write-concept      │ │ ╎          │                     ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
+╰──────────┬──────────╯ │ ╎          │ 3 · SHIP & EVOLVE                         ╎
+           ▼            │ ╎          ▼                                           ▼
+╭─────────────────────╮ │ ╎ ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
+│ 5 architecture      ├─╯ ╎ │ 12 release      ├──►│ 13 review       │   │ 14 demo         │
+│ /write-architecture │   ╎ │ /ship-release   │   │ /review-project │   │ /record-demo    │
+╰─────────────────────╯   ╎ ╰─────────────────╯   ╰────────┬────────╯   ╰─────────────────╯
+                          ╎  next sprint                   ╎
+                          ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
 
-──► next step    ╌╌► loop, or when it applies
+──►        next step
+╌╌►        loop, or when it applies
+/<skill>   the step's command; in Claude Code, /gradatim:<skill>
 ```
 
 - **The task loop:** design task, build task, close task, and draft PR where a pull request is due, one task at a time, in the order of the open sprint's board.
