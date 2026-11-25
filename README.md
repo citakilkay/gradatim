@@ -96,7 +96,37 @@ Both start with the same command: `/gradatim:init-project`.
 
 Fourteen steps in three phases, each run by its own skill.
 
-![Gradatim's cycle: three phases and fourteen steps, each labelled with its skill](docs/guides/cycle.svg)
+```text
+1 · FOUNDATION (once)
+╭────────────────────╮   existing codebase: quick start
+│ 1 init             ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
+│ init-project       │                                    ╎
+╰─────────┬──────────╯     2 · DELIVERY LOOP (per sprint) ╎
+          ▼                                               ▼
+╭────────────────────╮     ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
+│ 2 research         │ ╭──►│ 6 new sprint    ├──►│ 7 design task   ├──►│ 8 build task    │
+│ research-topics    │ │ ╭►│ new-sprint      │   │ design-task     │   │ build-task      │
+╰─────────┬──────────╯ │ ╎ ╰─────────────────╯   ╰─────────────────╯   ╰────────┬────────╯
+          ▼            │ ╎          ▲                     ▲                     │
+╭────────────────────╮ │ ╎          ╎ next sprint         ╎ next task           │
+│ 3 decide           │ │ ╎          ╎                     ╎                     ▼
+│ decide-direction   │ │ ╎ ╭────────┴────────╮   ╭────────┴────────╮   ╭─────────────────╮
+╰─────────┬──────────╯ │ ╎ │ 11 close sprint │◄──┤ 10 draft PR     │◄──┤ 9 close task    │
+          ▼            │ ╎ │ close-sprint    │   │ draft-pr        │   │ close-task      │
+╭────────────────────╮ │ ╎ ╰────────┬────────╯   ╰────────┬────────╯   ╰─────────────────╯
+│ 4 concept          │ │ ╎          │ something to ship   ╎ UI change
+│ write-concept      │ │ ╎          │                     ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
+╰─────────┬──────────╯ │ ╎          │ 3 · SHIP & EVOLVE                         ╎
+          ▼            │ ╎          ▼                                           ▼
+╭────────────────────╮ │ ╎ ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
+│ 5 architecture     ├─╯ ╎ │ 12 release      ├──►│ 13 review       │   │ 14 demo         │
+│ write-architecture │   ╎ │ ship-release    │   │ review-project  │   │ record-demo     │
+╰────────────────────╯   ╎ ╰─────────────────╯   ╰────────┬────────╯   ╰─────────────────╯
+                         ╎  next sprint                   ╎
+                         ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
+
+──► next step    ╌╌► loop, or when it applies
+```
 
 - **The task loop:** design task, build task, close task, and draft PR where a pull request is due, one task at a time, in the order of the open sprint's board.
 - **The sprint loop:** new sprint, the task loops, and close sprint; then release when there is something to ship, and review every two or three sprints.
