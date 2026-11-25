@@ -1,0 +1,15 @@
+{
+  "name": "gradus",
+  "description": "Gradatim's own marketplace, which holds the Gradatim plugin.",
+  "owner": {
+    "name": "Ilkay Citak"
+  },
+  "plugins": [
+    {
+      "name": "gradatim",
+      "source": "./",
+      "description": "Takes a software project from its first idea to release with an AI coding agent, step by step, and keeps every document true as the work moves.",
+      "version": "0.1.0"
+    }
+  ]
+}

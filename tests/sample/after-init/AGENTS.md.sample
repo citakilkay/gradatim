@@ -1,0 +1,27 @@
+# AGENTS.md
+
+The instruction file for every coding agent working on this project: Claude Code, Codex, GitHub Copilot, OpenCode, Cursor and others. Claude Code reads it only while no `CLAUDE.md` sits in this folder or above it.
+
+## The project
+
+Shelf is a small web app where a reader keeps track of their books, on shelves they name, online and offline.
+
+### The idea
+
+Shelf, a small web app where a reader keeps track of their books. A reader adds a book by its ISBN, and Shelf fills in the title, the author and the cover from a public book API. Books sit on shelves the reader names, such as Reading, To read and Finished. The shelves work offline, and catch up when the reader is back online. A reader can see how many books they finished this year.
+
+## How the work runs
+
+This project follows Gradatim's cycle.
+
+One developer works on this project.
+
+The documents flow top-down: Concept → MVP and phases → Architecture → Sprints → Tasks.
+
+1. init: this file.
+2. research: reports in `docs/research/`.
+3. decide: decisions in `docs/decisions/`.
+4. concept: `docs/MAIN_CONCEPT.md`, `docs/MVP.md`, `docs/ROADMAP.md` and the phases.
+5. architecture: `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `docs/agents/`.
+6. new sprint; then, for each task, design task, build task, close task and, where a pull request is due, draft PR; then close sprint.
+7. release, review and demo, when each is due.

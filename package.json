@@ -1,0 +1,34 @@
+{
+  "name": "gradatim",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Takes a software project from its first idea to release with an AI coding agent, step by step, and keeps every document true as the work moves.",
+  "keywords": [
+    "development-cycle",
+    "planning",
+    "sprints",
+    "tasks",
+    "documentation",
+    "skills"
+  ],
+  "license": "MIT",
+  "author": "Ilkay Citak",
+  "type": "module",
+  "main": ".opencode/plugins/gradatim.js",
+  "files": [
+    ".claude-plugin/",
+    ".opencode/",
+    "index.js",
+    "plugin.json",
+    "skills/",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "bump": "node scripts/bump-version.mjs",
+    "guides": "node scripts/guides.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<title>Shelf</title>
+	<rect width="512" height="512" rx="96" fill="#3d5a40" />
+	<rect x="112" y="128" width="56" height="232" rx="8" fill="#f4d58d" />
+	<rect x="184" y="152" width="48" height="208" rx="8" fill="#fbf8f3" />
+	<rect x="248" y="116" width="60" height="244" rx="8" fill="#e8a87c" />
+	<rect x="312" y="164" width="44" height="196" rx="8" transform="rotate(-12 334 262)" fill="#c9d6c3" />
+	<rect x="96" y="368" width="320" height="24" rx="6" fill="#fbf8f3" />
+</svg>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Gradatim artifact kit 5efe5b97">
+<title>Shelf overview</title>
+<style data-kit="5efe5b97">
+/* The look of every Gradatim artifact (MTH-4). ../scripts/wrap-artifact.mjs puts this file into
+   each page whole. Colours come only through these tokens. A page is dark by default, whatever
+   the system's colour scheme, and light only when a viewer sets data-theme="light". The light
+   block and the print block hold the same tokens: the tests compare them. */
+:root{
+  color-scheme:dark;
+  --paper:#0d1213;
+  --surface:#151c1d;
+  --surface-2:#1d2627;
+  --ink:#dee7e6;
+  --ink-2:#a2b1b0;
+  --ink-3:#8b9b9a;
+  --rule:#27322f;
+  --rule-strong:#3a4744;
+  --accent:#5cb4b8;
+  --accent-soft:#122a2c;
+  --critical:#e28376;
+  --critical-soft:#2b1714;
+  --caution:#d8a545;
+  --caution-soft:#2a2112;
+  --settled:#71bf95;
+  --settled-soft:#14281e;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,"Noto Serif",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --paper:#f2f4f4;
+  --surface:#ffffff;
+  --surface-2:#e8eded;
+  --ink:#16201f;
+  --ink-2:#4b5a59;
+  --ink-3:#5f6e6d;
+  --rule:#d2dada;
+  --rule-strong:#b3c0bf;
+  --accent:#12595e;
+  --accent-soft:#e0eced;
+  --critical:#9a2b1f;
+  --critical-soft:#f8e7e4;
+  --caution:#7f4d00;
+  --caution-soft:#f8eeda;
+  --settled:#256a4b;
+  --settled-soft:#e2eee8;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.65;overflow-wrap:break-word}
+img,svg{max-width:100%;height:auto}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:.06em}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+code{font-family:var(--mono);font-size:.84em;overflow-wrap:anywhere}
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.55;overflow-x:auto;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;margin:0 0 20px}
+pre code{font-size:inherit;overflow-wrap:normal}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-left:1.25em}
+li{margin-bottom:8px}
+li::marker{color:var(--ink-3)}
+strong,b{font-weight:600}
+hr{border:none;border-top:1px solid var(--rule);margin:28px 0}
+
+/* ---------- the page ---------- */
+main.kit{max-width:74rem;margin-inline:auto;padding:0 20px;counter-reset:sec}
+@media (max-width:480px){main.kit{padding:0 16px}body{font-size:16.5px}}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:52px 40px;border-bottom:2px solid var(--ink);margin-bottom:8px}
+.eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.08;letter-spacing:-.015em;margin:0 0 18px;max-width:20ch;text-wrap:balance}
+.standfirst{font-size:1.16rem;line-height:1.6;color:var(--ink-2);max-width:44rem;margin:0 0 26px}
+.standfirst strong{color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin:0}
+.meta b{font-weight:500;color:var(--ink-2)}
+
+/* ---------- sections, numbered in a margin column ---------- */
+.sec{counter-increment:sec;position:relative;padding:42px 0 42px 11rem;border-top:1px solid var(--rule)}
+.masthead+.sec{border-top:none}
+.sec>*{max-width:42rem}
+.sec>.wide,.sec>.phases,.sec>.pair,.sec>.items,.sec>.frame,.sec>figure{max-width:58rem}
+.sec>h2::before{content:"\00A7\2009" counter(sec);position:absolute;left:0;font-family:var(--mono);font-size:13px;font-weight:400;color:var(--accent);letter-spacing:.04em;line-height:2.9}
+.sec>:last-child{margin-bottom:0}
+@media (max-width:880px){
+  .sec{padding:34px 0}
+  .sec>h2::before{position:static;display:block;line-height:1.6;margin-bottom:4px}
+}
+h2{font-family:var(--serif);font-weight:600;font-size:1.62rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 16px;text-wrap:balance}
+h3{font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:.01em;margin:30px 0 10px;color:var(--ink)}
+.lede{font-size:1.08rem;color:var(--ink-2)}
+
+/* ---------- tags ---------- */
+.tag{display:inline-block;font-family:var(--mono);font-size:.78em;line-height:1.5;padding:1px 6px;border-radius:2px;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--rule);letter-spacing:.02em;white-space:nowrap;vertical-align:.08em}
+.tag.accent,.tag.strong,.tag.changed,.tag.planned{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.tag.ok,.tag.delivered{background:var(--settled-soft);color:var(--settled);border-color:color-mix(in srgb,var(--settled) 30%,transparent)}
+.tag.warn,.tag.affected{background:var(--caution-soft);color:var(--caution);border-color:color-mix(in srgb,var(--caution) 32%,transparent)}
+.tag.stop,.tag.dropped{background:var(--critical-soft);color:var(--critical);border-color:color-mix(in srgb,var(--critical) 30%,transparent)}
+
+/* ---------- callouts ---------- */
+.callout{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);padding:18px 20px;margin:0 0 20px;border-radius:0 3px 3px 0}
+.callout.warn{border-left-color:var(--caution);background:var(--caution-soft)}
+.callout.stop{border-left-color:var(--critical);background:var(--critical-soft)}
+.callout .label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px;color:var(--ink-2)}
+.callout.warn .label{color:var(--caution)}
+.callout.stop .label{color:var(--critical)}
+.callout>:last-child{margin-bottom:0}
+
+/* ---------- frames, tables, figures ---------- */
+.frame{overflow-x:auto;margin:0 0 22px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;line-height:1.5}
+table.wide{min-width:34rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.id{font-family:var(--mono);font-size:13px;color:var(--accent);white-space:nowrap}
+caption{caption-side:bottom;text-align:left;padding:10px 14px;font-family:var(--sans);font-size:12px;color:var(--ink-3);border-top:1px solid var(--rule)}
+figure{margin:0 0 24px}
+figure .frame{padding:16px;margin-bottom:0}
+figure.diagram svg{display:block;width:100%;min-width:36rem}
+figcaption{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:9px;line-height:1.5}
+.dg-box{fill:var(--surface-2);stroke:var(--rule-strong);stroke-width:1}
+.dg-box-a{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2}
+.dg-line{stroke:var(--rule-strong);stroke-width:1.2;fill:none}
+.dg-line-a{stroke:var(--accent);stroke-width:1.6;fill:none}
+.dg-arrow{fill:var(--rule-strong)}
+.dg-t{fill:var(--ink);font-family:var(--sans);font-size:13px}
+.dg-n{fill:var(--ink);font-family:var(--mono);font-size:13px;font-weight:500}
+.dg-s{fill:var(--ink-3);font-family:var(--sans);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase}
+.dg-c{fill:var(--ink-2);font-family:var(--sans);font-size:11px}
+
+/* ---------- a sequence of steps ---------- */
+.steps{list-style:none;padding:0;margin:0 0 22px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:0 0 20px 46px;margin:0}
+.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:1px;width:30px;height:22px;font-family:var(--mono);font-size:12px;color:var(--accent);border-bottom:1px solid var(--rule-strong)}
+.steps li::after{content:"";position:absolute;left:14px;top:26px;bottom:2px;width:1px;background:var(--rule)}
+.steps li:last-child{padding-bottom:0}
+.steps li:last-child::after{display:none}
+.steps .t{font-family:var(--sans);font-size:14px;font-weight:600;display:block;margin-bottom:3px}
+.steps .d{font-size:15.5px;color:var(--ink-2);display:block;line-height:1.55}
+
+/* ---------- milestones on a timeline: --from and --share are percentages of the whole ---------- */
+.timeline{list-style:none;padding:0;margin:0 0 22px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+.timeline li{display:grid;grid-template-columns:9.5rem minmax(0,1fr) 7.5rem;gap:6px 14px;align-items:center;padding:12px 14px;margin:0;border-bottom:1px solid var(--rule)}
+.timeline li:last-child{border-bottom:none}
+.timeline .t{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1.35}
+.timeline .bar{position:relative;display:block;height:24px;background:var(--surface-2);border-radius:2px}
+.timeline .bar::before{content:"";position:absolute;top:0;bottom:0;left:var(--from,0%);width:var(--share,100%);background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:2px}
+.timeline .in{position:relative;display:block;padding-left:calc(var(--from,0%) + 10px);line-height:24px;font-family:var(--mono);font-size:11.5px;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timeline .est{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right;white-space:nowrap}
+.timeline .d{grid-column:2 / -1;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.timeline li.later .bar::before{background:var(--surface);border-left-color:var(--ink-3)}
+.timeline li.later .in{color:var(--ink-2)}
+@media (max-width:640px){
+  .timeline li{grid-template-columns:minmax(0,1fr) auto}
+  .timeline .bar{grid-column:1 / -1;grid-row:2}
+  .timeline .d{grid-column:1 / -1}
+}
+
+/* ---------- phase cards ---------- */
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:14px;margin:0 0 22px}
+.phase{border:1px solid var(--rule);border-top:3px solid var(--rule-strong);border-radius:0 0 3px 3px;background:var(--surface);padding:16px}
+.phase.now{border-top-color:var(--accent)}
+.phase.later{border-top-color:var(--caution)}
+.phase .h{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.phase.now .h{color:var(--accent)}
+.phase.later .h{color:var(--caution)}
+.phase .w{font-family:var(--serif);font-size:1.14rem;font-weight:600;margin:0 0 10px;line-height:1.25}
+.phase p,.phase ul{font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);margin-bottom:8px}
+.phase>:last-child{margin-bottom:0}
+
+/* ---------- rows: a key, then its text ---------- */
+.rows{list-style:none;padding:0;margin:0 0 22px;border:1px solid var(--rule);border-radius:3px;background:var(--surface)}
+.rows li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:4px 14px;align-items:baseline;padding:11px 14px;margin:0;border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:14px;line-height:1.5}
+.rows li:last-child{border-bottom:none}
+.rows .k{font-family:var(--mono);font-size:12.5px;color:var(--accent)}
+.rows .tx span{color:var(--ink-2)}
+@media (max-width:640px){.rows li{grid-template-columns:1fr}}
+
+/* ---------- before and after ---------- */
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 22px}
+@media (max-width:760px){.pair{grid-template-columns:minmax(0,1fr)}}
+.side{border:1px solid var(--rule);border-top:3px solid var(--rule-strong);border-radius:0 0 3px 3px;background:var(--surface);padding:16px;min-width:0}
+.side.after{border-top-color:var(--accent)}
+.side .label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px}
+.side.after .label{color:var(--accent)}
+.side p,.side ul{font-family:var(--sans);font-size:14px;line-height:1.55}
+.side>:last-child{margin-bottom:0}
+
+/* ---------- ranked items ---------- */
+.items{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:0 0 22px}
+.item{position:relative;border:1px solid var(--rule);border-left:4px solid var(--rule-strong);border-radius:0 3px 3px 0;background:var(--surface);padding:18px 20px 18px 64px}
+.item.strong{border-left-color:var(--accent)}
+.item .rank{position:absolute;left:18px;top:14px;margin:0;font-family:var(--mono);font-size:24px;line-height:1.2;color:var(--ink-3)}
+.item.strong .rank{color:var(--accent)}
+.item h3{margin:0 0 8px;font-size:1.02rem}
+.item .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.item p,.item ul{font-family:var(--sans);font-size:14px;line-height:1.55}
+.item dl{margin:0 0 12px;font-family:var(--sans);font-size:14px;line-height:1.55}
+.item dt{font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-top:10px}
+.item dd{margin:2px 0 0;color:var(--ink-2)}
+.item>:last-child{margin-bottom:0}
+@media (max-width:480px){.item{padding:16px}.item .rank{position:static;margin-bottom:6px}}
+
+/* ---------- wireframe mockups, drawn from boxes ---------- */
+.mocks{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;margin:0 0 22px}
+.mock{font-family:var(--sans);font-size:12px;line-height:1.4;color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-strong);display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.mock.phone{width:15.5rem;max-width:100%;min-height:26rem;border-radius:22px;padding:14px 12px 18px;border-width:6px;border-color:var(--surface-2)}
+.mock.desktop{width:34rem;max-width:100%;min-height:16rem;border-radius:6px;padding:0 0 12px}
+.mock.desktop>*:not(.mk-chrome){margin-inline:12px}
+.mk-chrome{display:flex;gap:5px;align-items:center;padding:7px 10px;background:var(--surface-2);border-bottom:1px solid var(--rule)}
+.mk-chrome i{width:8px;height:8px;border-radius:50%;background:var(--rule-strong)}
+.mk-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:4px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.mk-line{height:8px;border-radius:4px;background:var(--surface-2)}
+.mk-line.short{width:55%}
+.mk-box{border:1px dashed var(--rule-strong);border-radius:4px;background:var(--surface);padding:8px 10px;min-height:2.6rem}
+.mk-row{display:flex;gap:8px;align-items:center}
+.mk-row>*{flex:1}
+.mk-btn{display:inline-block;text-align:center;padding:7px 12px;border-radius:4px;background:var(--accent);color:var(--surface);font-weight:600;flex:0 0 auto}
+.mk-btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.mk-chip{display:inline-block;padding:2px 8px;border-radius:10px;background:var(--surface-2);color:var(--ink-2);flex:0 0 auto}
+.mk-note{font-family:var(--mono);font-size:11px;color:var(--caution);border-left:2px solid var(--caution);padding-left:6px}
+.mocks figcaption{flex-basis:100%}
+
+/* ---------- the change log and the footer ---------- */
+.log{padding:42px 0 10px;border-top:1px solid var(--rule)}
+.log h2{font-size:1.25rem}
+.foot{border-top:2px solid var(--ink);margin-top:20px;padding-block:28px 60px;font-family:var(--sans);font-size:13px;color:var(--ink-3)}
+.foot p{max-width:46rem}
+.foot code{color:var(--ink-2)}
+
+@media print{
+  :root,:root[data-theme="light"]{
+    color-scheme:light;
+    --paper:#f2f4f4;
+    --surface:#ffffff;
+    --surface-2:#e8eded;
+    --ink:#16201f;
+    --ink-2:#4b5a59;
+    --ink-3:#5f6e6d;
+    --rule:#d2dada;
+    --rule-strong:#b3c0bf;
+    --accent:#12595e;
+    --accent-soft:#e0eced;
+    --critical:#9a2b1f;
+    --critical-soft:#f8e7e4;
+    --caution:#7f4d00;
+    --caution-soft:#f8eeda;
+    --settled:#256a4b;
+    --settled-soft:#e2eee8;
+  }
+  body{background:#fff;font-size:11pt}
+  .callout,.frame,.phase,.side,.item,.mock,figure{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="kit" data-kind="overview">
+
+<header class="masthead">
+  <p class="eyebrow">Overview</p>
+  <h1>Shelf</h1>
+  <p class="standfirst">A small web app where a reader keeps track of their books on shelves they name, online and offline.</p>
+  <p class="meta"><span><b>Made</b> 2026-11-13</span> <span><b>The plan</b> about 17.5 dev-days</span> <span><b>Milestones</b> 3</span></p>
+</header>
+
+<section class="sec" id="what">
+  <h2>What it will be</h2>
+  <p>A reader types a book's ISBN, and Shelf fills in its title, author and cover from Open Library. Books sit on shelves the reader names, the shelves work offline and sync across devices once the reader signs in, and the reader can see how many books they finished this year. Shelf is free and non-commercial, and has no second book source.</p>
+  <ul>
+    <li>Books come from Open Library's ISBN API and Authors API, with no key (D1, D2).</li>
+    <li>Adding a book never blocks: it is saved at once, and the details fill in later or are typed by hand (D4).</li>
+    <li>Reading, To read and Finished to start with, renamable, and one shelf per book (D5).</li>
+    <li>Shelves and covers live on the device, and sync where the latest change wins (D3, D6, D9).</li>
+    <li>The count of books finished this year uses an editable finished date (D7).</li>
+  </ul>
+</section>
+
+<section class="sec" id="milestones">
+  <h2>Milestones</h2>
+  <p>The MVP is Shelf offline on one device, phase 1 adds the yearly count and sync across devices, and phase 2 holds three proposals: about 17.5 dev-days in all.</p>
+  <ol class="timeline">
+    <li style="--from:0%;--share:51.4%">
+      <span class="t">The MVP</span>
+      <span class="bar"><span class="in">M1 to M10</span></span>
+      <span class="est">9 dev-days</span>
+      <span class="d">An offline app shell, named shelves, adding by ISBN, online or offline, the lookup, typing by hand, stored covers, moving books, finished dates, and the question to Open Library.</span>
+    </li>
+    <li class="later" style="--from:51.4%;--share:31.4%">
+      <span class="t">Phase 1</span>
+      <span class="bar"><span class="in">P1.1 to P1.3</span></span>
+      <span class="est">5.5 dev-days</span>
+      <span class="d">The count of books finished this year, sign-in, and sync across devices.</span>
+    </li>
+    <li class="later" style="--from:82.8%;--share:17.2%">
+      <span class="t">Phase 2</span>
+      <span class="bar"><span class="in">P2.1 to P2.3</span></span>
+      <span class="est">3 dev-days</span>
+      <span class="d">Proposed: barcode scanning, search across shelves, and sorting a shelf.</span>
+    </li>
+  </ol>
+</section>
+
+<section class="sec" id="stories">
+  <h2>The stories</h2>
+  <div class="frame">
+    <table>
+      <thead><tr><th>Story</th><th>What it gives</th><th>Milestone</th><th class="n">Dev-days</th></tr></thead>
+      <tbody>
+        <tr><td class="id">M1</td><td>Offline app shell</td><td>The MVP</td><td class="n">1</td></tr>
+        <tr><td class="id">M2</td><td>Shelves the reader names</td><td>The MVP</td><td class="n">1.5</td></tr>
+        <tr><td class="id">M3</td><td>Add a book by its ISBN</td><td>The MVP</td><td class="n">1</td></tr>
+        <tr><td class="id">M10</td><td>Add a book with the network off</td><td>The MVP</td><td class="n">0.25</td></tr>
+        <tr><td class="id">M4</td><td>Title and author from Open Library</td><td>The MVP</td><td class="n">2</td></tr>
+        <tr><td class="id">M5</td><td>Type the title and author by hand</td><td>The MVP</td><td class="n">0.5</td></tr>
+        <tr><td class="id">M6</td><td>Covers stored on the device</td><td>The MVP</td><td class="n">1</td></tr>
+        <tr><td class="id">M7</td><td>Move or remove a book</td><td>The MVP</td><td class="n">1</td></tr>
+        <tr><td class="id">M8</td><td>Edit the finished date</td><td>The MVP</td><td class="n">0.5</td></tr>
+        <tr><td class="id">M9</td><td>Ask Open Library about stored covers</td><td>The MVP</td><td class="n">0.25</td></tr>
+        <tr><td class="id">P1.1</td><td>Books finished this year</td><td>Phase 1</td><td class="n">0.5</td></tr>
+        <tr><td class="id">P1.2</td><td>Sign up and sign in</td><td>Phase 1</td><td class="n">2</td></tr>
+        <tr><td class="id">P1.3</td><td>Shelves sync across devices</td><td>Phase 1</td><td class="n">3</td></tr>
+        <tr><td class="id">P2.1</td><td>Scan a book's barcode (proposed)</td><td>Phase 2</td><td class="n">1.5</td></tr>
+        <tr><td class="id">P2.2</td><td>Find a book across shelves (proposed)</td><td>Phase 2</td><td class="n">1</td></tr>
+        <tr><td class="id">P2.3</td><td>Sort a shelf (proposed)</td><td>Phase 2</td><td class="n">0.5</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="later">
+  <h2>What comes after</h2>
+  <div class="phases">
+    <div class="phase now">
+      <p class="h">The MVP</p>
+      <p class="w">Offline shelves on one device</p>
+      <p>M1 to M10</p>
+    </div>
+    <div class="phase later">
+      <p class="h">Phase 1</p>
+      <p class="w">The yearly count, and sync across devices</p>
+      <p>P1.1, P1.2, P1.3</p>
+    </div>
+    <div class="phase later">
+      <p class="h">Phase 2</p>
+      <p class="w">Quicker adding and finding</p>
+      <p>P2.1, P2.2, P2.3</p>
+    </div>
+  </div>
+</section>
+
+<section class="log" id="change-log">
+  <h2>Change log</h2>
+  <div class="frame">
+    <table>
+      <thead><tr><th>Date</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td class="n">2026-11-06</td><td>Made by the concept step</td></tr>
+        <tr><td class="n">2026-11-13</td><td>The picks of the review after sprint 2: M10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Made by Gradatim's concept step on 2026-11-06, from <code>docs/MAIN_CONCEPT.md</code>, <code>docs/MVP.md</code>, <code>docs/ROADMAP.md</code>, <code>docs/PHASE-1.md</code> and <code>docs/PHASE-2.md</code>.</p>
+</footer>
+
+</main>
+</body>
+</html>

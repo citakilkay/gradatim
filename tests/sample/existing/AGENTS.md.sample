@@ -1,0 +1,13 @@
+# AGENTS.md
+
+Notes for coding agents working on Shelf.
+
+## Commands
+
+- `npm start` runs the app on port 3000.
+- `npm test` runs the tests.
+
+## Rules
+
+- Keep the code in `src/`, as ES modules.
+- Add no dependency without asking.

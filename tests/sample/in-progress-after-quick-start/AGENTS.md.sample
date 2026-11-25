@@ -1,0 +1,47 @@
+# AGENTS.md
+
+Notes for coding agents working on Shelf.
+
+## Commands
+
+- `npm start` runs the app on port 3000.
+- `npm test` runs the tests.
+
+## The project
+
+Shelf: a small web app where a reader keeps track of their books. The idea, and what Shelf is and is not, are in [the main concept](docs/gradatim/MAIN_CONCEPT.md).
+
+- **Architecture:** [docs/gradatim/ARCHITECTURE.md](docs/gradatim/ARCHITECTURE.md), the modules, the seams and the open choices.
+- **Runbook:** [docs/gradatim/RUNBOOK.md](docs/gradatim/RUNBOOK.md), how a release goes out.
+- **Development cycle:** [docs/gradatim/agents/development-cycle.md](docs/gradatim/agents/development-cycle.md), the rules every agent keeps.
+- **Commands:** [docs/gradatim/agents/commands.md](docs/gradatim/agents/commands.md), what to run.
+
+## How the work runs
+
+This project follows Gradatim's cycle.
+
+Gradatim's documents are in `docs/gradatim/`: each `docs/` path of its steps stands for it, and the project's own files and rules stay as they are.
+
+One developer works on this project.
+
+The documents flow top-down: Concept → MVP and phases → Architecture → Sprints → Tasks.
+
+1. init: this file.
+2. research: reports in `docs/research/`.
+3. decide: decisions in `docs/decisions/`.
+4. concept: `docs/MAIN_CONCEPT.md`, `docs/MVP.md`, `docs/ROADMAP.md` and the phases.
+5. architecture: `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `docs/agents/`.
+6. new sprint; then, for each task, design task, build task, close task and, where a pull request is due, draft PR; then close sprint.
+7. release, review and demo, when each is due.
+
+## How we work
+
+Each task goes plan → build → review, as `docs/agents/development-cycle.md` says. The sprint under way is in `docs/sprints/`, and our decisions are in `docs/decisions/`.
+
+SHF-3 is under way: shelves the reader names, as D2 decided.
+
+## Rules
+
+- Keep the code in `src/`, as ES modules.
+- Add no dependency without asking.
+- Git is read-only by default. Ask the owner for approval before each branch, checkout, commit, push or merge.

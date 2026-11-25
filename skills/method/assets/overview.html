@@ -1,0 +1,90 @@
+<title>{{Project}} overview</title>
+<main class="kit" data-kind="overview">
+
+<!-- The overview: what the project will look like, its milestones and their estimated times.
+     Fill each slot from the concept, the MVP, the roadmap and the phases. Repeat a part as often
+     as the plan needs, and drop a section that has nothing to show. Colours come only from the
+     kit's classes and tokens. Then run the wrap. -->
+
+<header class="masthead">
+  <p class="eyebrow">Overview</p>
+  <h1>{{Project}}</h1>
+  <p class="standfirst">{{What the project is and whom it is for, in one or two sentences}}</p>
+  <p class="meta"><span><b>Made</b> {{YYYY-MM-DD}}</span> <span><b>The plan</b> about {{n}} dev-days</span> <span><b>Milestones</b> {{n}}</span></p>
+</header>
+
+<section class="sec" id="what">
+  <h2>What it will be</h2>
+  <p>{{The concept in a short paragraph: what a user does with it, and what it leaves out}}</p>
+  <ul>
+    <li>{{A trait that shapes it, with the decision behind it, such as D4}}</li>
+  </ul>
+</section>
+
+<section class="sec" id="milestones">
+  <h2>Milestones</h2>
+  <p>{{One sentence on the order, and how long the whole plan takes}}</p>
+  <!-- One li per milestone, in order. --from is where its bar starts and --share how long it is,
+       each a percentage of the whole plan's dev-days. A milestone after the MVP takes class="later". -->
+  <ol class="timeline">
+    <li style="--from:0%;--share:{{n}}%">
+      <span class="t">{{The MVP}}</span>
+      <span class="bar"><span class="in">{{Its stories, or its sprints once there are some}}</span></span>
+      <span class="est">{{n}} dev-days</span>
+      <span class="d">{{What it delivers, by its stories}}</span>
+    </li>
+    <li class="later" style="--from:{{n}}%;--share:{{n}}%">
+      <span class="t">{{Phase 1}}</span>
+      <span class="bar"><span class="in">{{Its stories, or its sprints once there are some}}</span></span>
+      <span class="est">{{n}} dev-days</span>
+      <span class="d">{{What it delivers, by its stories}}</span>
+    </li>
+  </ol>
+</section>
+
+<section class="sec" id="stories">
+  <h2>The stories</h2>
+  <!-- A story the code already meets, `existing` in the plan, reads "exists" in its Dev-days cell. -->
+  <div class="frame">
+    <table>
+      <thead><tr><th>Story</th><th>What it gives</th><th>Milestone</th><th class="n">Dev-days</th></tr></thead>
+      <tbody>
+        <tr><td class="id">{{M1}}</td><td>{{What a user gets}}</td><td>{{The MVP}}</td><td class="n">{{n}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="later">
+  <h2>What comes after</h2>
+  <div class="phases">
+    <div class="phase now">
+      <p class="h">{{The MVP}}</p>
+      <p class="w">{{Its aim, in a few words}}</p>
+      <p>{{Its stories, by id}}</p>
+    </div>
+    <div class="phase later">
+      <p class="h">{{Phase 1}}</p>
+      <p class="w">{{Its aim, in a few words}}</p>
+      <p>{{Its stories, by id}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="log" id="change-log">
+  <h2>Change log</h2>
+  <div class="frame">
+    <table>
+      <thead><tr><th>Date</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td class="n">{{YYYY-MM-DD}}</td><td>{{Made by the concept step}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Made by Gradatim's concept step on {{YYYY-MM-DD}}, from <code>docs/MAIN_CONCEPT.md</code>, <code>docs/MVP.md</code>, <code>docs/ROADMAP.md</code> and <code>{{docs/PHASE-1.md}}</code>.</p>
+</footer>
+
+</main>

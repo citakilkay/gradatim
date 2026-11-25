@@ -1,0 +1,36 @@
+# AGENTS.md
+
+The instruction file for every coding agent working on this project: Claude Code, Codex, GitHub Copilot, OpenCode, Cursor and others. Claude Code reads it only while no `CLAUDE.md` sits in this folder or above it.
+
+## The project
+
+Shelf is a small web app where a reader keeps track of their books, on shelves they name, online and offline. The idea and the plan are in [the concept](docs/MAIN_CONCEPT.md).
+
+## How the work runs
+
+This project follows Gradatim's cycle.
+
+One developer works on this project.
+
+The documents flow top-down: Concept → MVP and phases → Architecture → Sprints → Tasks.
+
+1. init: this file.
+2. research: reports in `docs/research/`.
+3. decide: decisions in `docs/decisions/`.
+4. concept: `docs/MAIN_CONCEPT.md`, `docs/MVP.md`, `docs/ROADMAP.md` and the phases.
+5. architecture: `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `docs/agents/`.
+6. new sprint; then, for each task, design task, build task, close task and, where a pull request is due, draft PR; then close sprint.
+7. release, review and demo, when each is due.
+
+## The architecture and the agent docs
+
+What only some tasks need lives in the files below.
+
+- **Before any task**, read [the development cycle](docs/agents/development-cycle.md): the method's rules and this project's branch, merge and pull request rules.
+- **Before designing or building a task**, read [the architecture](docs/ARCHITECTURE.md): the modules, their seams, the data, the deployment and the tests.
+- **Before running anything**, read [the commands](docs/agents/commands.md): what to run and what each command does.
+- **Before a release**, read [the runbook](docs/RUNBOOK.md): how a release goes out, is checked and is rolled back.
+
+## Rules
+
+- **Git:** agents make no git writes in this project: no branch, no commit and no push. They show the commands, and I run them.

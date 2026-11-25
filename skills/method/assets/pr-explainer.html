@@ -1,0 +1,74 @@
+<title>{{Project}} pull request: {{CAT-1, and what it does in a few words}}</title>
+<main class="kit" data-kind="pr-explainer">
+
+<!-- A pull request's explainer: what it aims at, and the features it changes or affects. Fill each
+     slot from the PR's tasks, their designs and the code. Repeat a part as often as the PR needs,
+     and drop a section that has nothing to show. Colours come only from the kit's classes and
+     tokens. Then run the wrap. -->
+
+<header class="masthead">
+  <p class="eyebrow">Pull request</p>
+  <h1>{{What the PR does, in a few words}}</h1>
+  <p class="standfirst">{{What it aims at, and why now, in one or two sentences}}</p>
+  <p class="meta"><span><b>Opened</b> {{YYYY-MM-DD}}</span> <span><b>Tasks</b> {{CAT-1}}</span> <span><b>Stories</b> {{M1}}</span> <span><b>Branch</b> {{cat-1-the-task}} into {{main}}</span></p>
+</header>
+
+<section class="sec" id="aim">
+  <h2>What it aims at</h2>
+  <p>{{The aim in a short paragraph: what a user can do once it is merged}}</p>
+  <ul class="rows">
+    <li><span class="k">{{CAT-1}}</span><span class="tx"><b>{{The task's title}}</b> <span>{{what it built, for story M1}}</span></span></li>
+  </ul>
+</section>
+
+<section class="sec" id="changes">
+  <h2>What it changes</h2>
+  <!-- changed: a feature this PR changes; affected: one it touches without changing it. -->
+  <ul class="rows">
+    <li><span class="k"><span class="tag changed">changed</span></span><span class="tx"><b>{{A feature}}</b> <span>{{what changes in it}}</span></span></li>
+    <li><span class="k"><span class="tag affected">affected</span></span><span class="tx"><b>{{A feature}}</b> <span>{{how it is touched}}</span></span></li>
+  </ul>
+</section>
+
+<section class="sec" id="before-after">
+  <h2>Before and after</h2>
+  <div class="pair">
+    <div class="side">
+      <p class="label">Before</p>
+      <p>{{How it works now}}</p>
+    </div>
+    <div class="side after">
+      <p class="label">After</p>
+      <p>{{How it works once this is merged}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="check">
+  <h2>What to check</h2>
+  <ol class="steps">
+    <li><span class="t">{{What to try}}</span><span class="d">{{What a reviewer should see}}</span></li>
+  </ol>
+  <div class="callout warn">
+    <p class="label">Risks</p>
+    <p>{{What could go wrong, and what guards it}}</p>
+  </div>
+</section>
+
+<section class="log" id="change-log">
+  <h2>Change log</h2>
+  <div class="frame">
+    <table>
+      <thead><tr><th>Date</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td class="n">{{YYYY-MM-DD}}</td><td>{{Made by the draft PR step}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Made by Gradatim's draft PR step on {{YYYY-MM-DD}}, from <code>{{docs/sprints/sprint-1/CAT-1-the-task.md}}</code> and <code>{{docs/plans/CAT-1-the-task-design.md}}</code>.</p>
+</footer>
+
+</main>

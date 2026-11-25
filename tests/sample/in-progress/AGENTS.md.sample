@@ -1,0 +1,20 @@
+# AGENTS.md
+
+Notes for coding agents working on Shelf.
+
+## Commands
+
+- `npm start` runs the app on port 3000.
+- `npm test` runs the tests.
+
+## How we work
+
+Each task goes plan → build → review, as `docs/agents/development-cycle.md` says. The sprint under way is in `docs/sprints/`, and our decisions are in `docs/decisions/`.
+
+SHF-3 is under way: shelves the reader names, as D2 decided.
+
+## Rules
+
+- Keep the code in `src/`, as ES modules.
+- Add no dependency without asking.
+- Git is read-only by default. Ask the owner for approval before each branch, checkout, commit, push or merge.

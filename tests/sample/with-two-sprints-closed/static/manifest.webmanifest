@@ -1,0 +1,18 @@
+{
+	"name": "Shelf",
+	"short_name": "Shelf",
+	"description": "Keep track of your books, on shelves you name, online and offline.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"background_color": "#fbf8f3",
+	"theme_color": "#3d5a40",
+	"icons": [
+		{
+			"src": "/icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}

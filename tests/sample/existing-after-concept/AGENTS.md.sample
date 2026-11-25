@@ -1,0 +1,33 @@
+# AGENTS.md
+
+Notes for coding agents working on Shelf.
+
+## Commands
+
+- `npm start` runs the app on port 3000.
+- `npm test` runs the tests.
+
+## Rules
+
+- Keep the code in `src/`, as ES modules.
+- Add no dependency without asking.
+
+## The project
+
+Shelf is a small web app where a reader keeps track of their books, on shelves they name. The idea and the plan are in [the concept](docs/MAIN_CONCEPT.md).
+
+## How the work runs
+
+This project follows Gradatim's cycle.
+
+One developer works on this project.
+
+The documents flow top-down: Concept → MVP and phases → Architecture → Sprints → Tasks.
+
+1. init: this file.
+2. research: reports in `docs/research/`.
+3. decide: decisions in `docs/decisions/`.
+4. concept: `docs/MAIN_CONCEPT.md`, `docs/MVP.md`, `docs/ROADMAP.md` and the phases.
+5. architecture: `docs/ARCHITECTURE.md`, `docs/RUNBOOK.md` and `docs/agents/`.
+6. new sprint; then, for each task, design task, build task, close task and, where a pull request is due, draft PR; then close sprint.
+7. release, review and demo, when each is due.

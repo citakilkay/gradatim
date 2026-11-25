@@ -1,0 +1,129 @@
+<title>{{Project}} review, sprint {{n}}</title>
+<main class="kit" data-kind="review-report">
+
+<!-- A review report: one list of improvements to the architecture, the UX and the features,
+     ranked from the strongest down, each with a badge, strong or optional, and no categories.
+     Item k shows the rank k and has the id item-k; every strong item comes before every optional
+     one; the top recommendation links item 1. Fill each slot from the project as built and its
+     documents, and repeat an item as often as the list needs. Draw a mockup or a diagram only where
+     it helps: the three below, a phone, a before and after pair of desktop frames, and a diagram,
+     use only the kit's classes, so the kit's style needs no reading. Colours come only from the
+     kit's classes and tokens. Then run the wrap. The report is a draft until the sprint rules list
+     it, and sealed from then on, so it has no change log. -->
+
+<header class="masthead">
+  <p class="eyebrow">Review</p>
+  <h1>{{Project}}, after sprint {{n}}</h1>
+  <p class="standfirst">{{What the review found, in one or two sentences}}</p>
+  <p class="meta"><span><b>Made</b> {{YYYY-MM-DD}}</span> <span><b>Sprints</b> {{1 and 2}}</span> <span><b>Items</b> {{n}}</span></p>
+</header>
+
+<section class="sec" id="top">
+  <h2>The top recommendation</h2>
+  <div class="callout">
+    <p class="label">1 · strong</p>
+    <p><b>{{The first item's title}}.</b> {{Why it comes first, in one sentence}} <a href="#item-1">See item 1</a>.</p>
+  </div>
+</section>
+
+<section class="sec" id="items">
+  <h2>The recommendations</h2>
+  <div class="items">
+    <article class="item strong" id="item-1">
+      <p class="rank">1</p>
+      <h3>{{A short title that names the change}}</h3>
+      <p class="tags"><span class="tag strong">strong</span></p>
+      <dl>
+        <dt>The problem</dt><dd>{{What hurts now, in one sentence, with where it shows}}</dd>
+        <dt>The change</dt><dd>{{What to do, in one sentence}}</dd>
+        <dt>What it wins</dt><dd>{{The gain, in a few words}}</dd>
+        <dt>The size</dt><dd>{{About n dev-days}}</dd>
+      </dl>
+      <!-- A phone frame, for a screen as a phone shows it. -->
+      <figure class="mocks">
+        <div class="mock phone">
+          <div class="mk-bar"><span>{{Screen}}</span><span class="mk-chip">{{a chip}}</span></div>
+          <div class="mk-line"></div>
+          <div class="mk-line short"></div>
+          <div class="mk-box">{{A part of the screen}}</div>
+          <div class="mk-row"><span class="mk-btn">{{Action}}</span><span class="mk-btn ghost">{{Other}}</span></div>
+          <p class="mk-note">{{What changed here}}</p>
+        </div>
+        <figcaption>{{What the mockup shows}}</figcaption>
+      </figure>
+    </article>
+    <article class="item strong" id="item-2">
+      <p class="rank">2</p>
+      <h3>{{A short title that names the change}}</h3>
+      <p class="tags"><span class="tag strong">strong</span></p>
+      <dl>
+        <dt>The problem</dt><dd>{{What hurts now}}</dd>
+        <dt>The change</dt><dd>{{What to do}}</dd>
+        <dt>What it wins</dt><dd>{{The gain}}</dd>
+        <dt>The size</dt><dd>{{About n dev-days}}</dd>
+      </dl>
+      <!-- A before and after pair of desktop frames, for a screen that changes. -->
+      <div class="pair">
+        <div class="side">
+          <p class="label">Before</p>
+          <div class="mock desktop">
+            <div class="mk-chrome"><i></i><i></i><i></i></div>
+            <div class="mk-bar"><span>{{Screen}}</span></div>
+            <div class="mk-box">{{What shows now}}</div>
+          </div>
+        </div>
+        <div class="side after">
+          <p class="label">After</p>
+          <div class="mock desktop">
+            <div class="mk-chrome"><i></i><i></i><i></i></div>
+            <div class="mk-bar"><span>{{Screen}}</span></div>
+            <div class="mk-box">{{What shows then}}</div>
+            <p class="mk-note">{{What changed here}}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="item optional" id="item-3">
+      <p class="rank">3</p>
+      <h3>{{A short title that names the change}}</h3>
+      <p class="tags"><span class="tag optional">optional</span></p>
+      <dl>
+        <dt>The problem</dt><dd>{{What hurts now}}</dd>
+        <dt>The change</dt><dd>{{What to do}}</dd>
+        <dt>What it wins</dt><dd>{{The gain}}</dd>
+        <dt>The size</dt><dd>{{About n dev-days}}</dd>
+      </dl>
+      <!-- A diagram, for a change to the code's structure: boxes, lines and labels in the kit's classes. -->
+      <figure class="diagram">
+        <div class="frame">
+          <svg viewBox="0 0 560 120" role="img">
+            <title>{{What the diagram shows}}</title>
+            <rect class="dg-box" x="10" y="40" width="150" height="44" rx="3"/>
+            <text class="dg-t" x="85" y="67" text-anchor="middle">{{A module}}</text>
+            <rect class="dg-box-a" x="205" y="40" width="150" height="44" rx="3"/>
+            <text class="dg-t" x="280" y="67" text-anchor="middle">{{The seam that changes}}</text>
+            <rect class="dg-box" x="400" y="40" width="150" height="44" rx="3"/>
+            <text class="dg-t" x="475" y="67" text-anchor="middle">{{Another module}}</text>
+            <path class="dg-line" d="M160 62H199"/>
+            <path class="dg-arrow" d="M205 62l-7-4v8z"/>
+            <path class="dg-line-a" d="M355 62H394"/>
+            <path class="dg-arrow" d="M400 62l-7-4v8z"/>
+            <text class="dg-s" x="280" y="26" text-anchor="middle">{{after}}</text>
+          </svg>
+        </div>
+        <figcaption>{{What the diagram shows}}</figcaption>
+      </figure>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <h2>How it was made</h2>
+  <p>{{What was read and tried: the code, the UI in a browser or from screenshots, and the documents}}</p>
+</section>
+
+<footer class="foot">
+  <p>Made by Gradatim's review step on {{YYYY-MM-DD}}, from <code>docs/MVP.md</code>, <code>docs/ARCHITECTURE.md</code> and the code as built.</p>
+</footer>
+
+</main>

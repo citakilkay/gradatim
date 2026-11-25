@@ -1,0 +1,13 @@
+# Text files are stored and checked out with LF line endings on every OS: the skills and scripts
+# also run on macOS and Linux hosts.
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
