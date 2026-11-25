@@ -98,29 +98,24 @@ Fourteen steps in three phases, each run by its own skill.
 
 ```text
 1 · FOUNDATION (once)
-╭─────────────────────╮   existing codebase: quick start
-│ 1 init              ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-│ /init-project       │                                    ╎
+╭─ 1 ─────────────────╮   existing codebase: quick start
+│ /init-project       ├╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
 ╰──────────┬──────────╯     2 · DELIVERY LOOP (per sprint) ╎
            ▼                                               ▼
-╭─────────────────────╮     ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
-│ 2 research          │ ╭──►│ 6 new sprint    ├──►│ 7 design task   ├──►│ 8 build task    │
-│ /research-topics    │ │ ╭►│ /new-sprint     │   │ /design-task    │   │ /build-task     │
-╰──────────┬──────────╯ │ ╎ ╰─────────────────╯   ╰─────────────────╯   ╰────────┬────────╯
-           ▼            │ ╎          ▲                     ▲                     │
-╭─────────────────────╮ │ ╎          ╎ next sprint         ╎ next task           │
-│ 3 decide            │ │ ╎          ╎                     ╎                     ▼
-│ /decide-direction   │ │ ╎ ╭────────┴────────╮   ╭────────┴────────╮   ╭─────────────────╮
-╰──────────┬──────────╯ │ ╎ │ 11 close sprint │◄──┤ 10 draft PR     │◄──┤ 9 close task    │
-           ▼            │ ╎ │ /close-sprint   │   │ /draft-pr       │   │ /close-task     │
-╭─────────────────────╮ │ ╎ ╰────────┬────────╯   ╰────────┬────────╯   ╰─────────────────╯
-│ 4 concept           │ │ ╎          │ something to ship   ╎ UI change
-│ /write-concept      │ │ ╎          │                     ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
-╰──────────┬──────────╯ │ ╎          │ 3 · SHIP & EVOLVE                         ╎
+╭─ 2 ─────────────────╮     ╭─ 6 ─────────────╮   ╭─ 7 ─────────────╮   ╭─ 8 ─────────────╮
+│ /research-topics    │ ╭──►│ /new-sprint     ├──►│ /design-task    ├──►│ /build-task     │
+╰──────────┬──────────╯ │   ╰─────────────────╯   ╰─────────────────╯   ╰────────┬────────╯
+           ▼            │            ▲                     ▲                     │
+╭─ 3 ─────────────────╮ │            ╎ next sprint         ╎ next task           │
+│ /decide-direction   │ │ ╭╌╌╌╌╌╌╌╌╌╌┤                     ╎                     ▼
+╰──────────┬──────────╯ │ ╎ ╭─ 11 ───┴────────╮   ╭─ 10 ───┴────────╮   ╭─ 9 ─────────────╮
+           ▼            │ ╎ │ /close-sprint   │◄──┤ /draft-pr       │◄──┤ /close-task     │
+╭─ 4 ─────────────────╮ │ ╎ ╰────────┬────────╯   ╰────────┬────────╯   ╰─────────────────╯
+│ /write-concept      │ │ ╎          │ something to ship   ╎ UI change
+╰──────────┬──────────╯ │ ╎          │ 3 · SHIP & EVOLVE   ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╮
            ▼            │ ╎          ▼                                           ▼
-╭─────────────────────╮ │ ╎ ╭─────────────────╮   ╭─────────────────╮   ╭─────────────────╮
-│ 5 architecture      ├─╯ ╎ │ 12 release      ├──►│ 13 review       │   │ 14 demo         │
-│ /write-architecture │   ╎ │ /ship-release   │   │ /review-project │   │ /record-demo    │
+╭─ 5 ─────────────────╮ │ ╎ ╭─ 12 ────────────╮   ╭─ 13 ────────────╮   ╭─ 14 ────────────╮
+│ /write-architecture ├─╯ ╎ │ /ship-release   ├──►│ /review-project │   │ /record-demo    │
 ╰─────────────────────╯   ╎ ╰─────────────────╯   ╰────────┬────────╯   ╰─────────────────╯
                           ╎  next sprint                   ╎
                           ╰╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╯
