@@ -9,7 +9,7 @@
       "name": "gradatim",
       "source": "./",
       "description": "Takes a software project from its first idea to release with an AI coding agent, step by step, and keeps every document true as the work moves.",
-      "version": "0.1.0"
+      "version": "1.0.0"
     }
   ]
 }

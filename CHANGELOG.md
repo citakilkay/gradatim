@@ -4,6 +4,8 @@ Every notable change to Gradatim, newest first. The format follows [Keep a Chang
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-25
+
 The first public release.
 
 ### Added

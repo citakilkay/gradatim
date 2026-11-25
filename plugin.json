@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gradatim",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Takes a software project from its first idea to release with an AI coding agent, step by step, and keeps every document true as the work moves.",
   "author": {
     "name": "Ilkay Citak"
