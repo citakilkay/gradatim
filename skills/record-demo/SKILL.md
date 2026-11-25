@@ -1,6 +1,6 @@
 ---
 name: record-demo
-description: "Records a short, paced video walkthrough of a Gradatim project's UI with the project's own Playwright, and keeps its script beside the video. Use when the user asks for Gradatim's demo step, or to record, film or show a demo or a walkthrough of the app."
+description: "Records a short, paced video of the feature the user asks for in a Gradatim project's UI, or of the whole UI, with the project's own Playwright, and keeps its script beside the video. Use when the user asks for Gradatim's demo step, or to record, film or show a demo or a walkthrough of the app."
 license: MIT
 ---
 
@@ -15,7 +15,7 @@ This skill writes only what "Reads and writes" lists, and makes only the git and
 ## When to use
 
 - The user asks for Gradatim's demo step, or to record, film or show a demo or a walkthrough of the app. Draft PR starts it for a change a user sees.
-- Not for checking that a page works: that is the project's tests, in `build-task` or `close-task`. Not for a look at the whole UI: that is `review-project`. Not for a folder with no Gradatim project: that is `init-project`.
+- Not for checking that a page works: that is the project's tests, in `build-task` or `close-task`. Not for a review of the UI: that is `review-project`. Not for a folder with no Gradatim project: that is `init-project`.
 
 ## Reads and writes
 

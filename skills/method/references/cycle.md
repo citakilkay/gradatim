@@ -5,10 +5,10 @@
 | # | Step | Skill | What it does | Runs | Next | Idea |
 |---|---|---|---|---|---|---|
 | 1 | init | `init-project` | Sets up the project's folder: git, and `AGENTS.md` with the idea, who works on it and the order of the documents. Presents the cycle, or runs the quick start | Once, first | research | 1 |
-| 2 | research | `research-topics` | Researches the topics the user picks, in cited reports that mark the risks and trade-offs. Decides nothing | After init, and any time | decide | 2 |
-| 3 | decide | `decide-direction` | Asks the user questions until you both agree, records the decisions, then runs the sync | After research, and whenever the direction changes | concept on its first run; later, the step the change affects | 3 |
+| 2 | research | `research-topics` | Researches the idea's risks, trade-offs, market and more, in cited reports. Decides nothing | After init, and any time | decide | 2 |
+| 3 | decide | `decide-direction` | Asks the user about the project's direction until both agree, then records the decisions | After research, and whenever the direction changes | concept on its first run; later, the step the change affects | 3 |
 | 4 | concept | `write-concept` | Writes the concept, the MVP, the roadmap and the phases, and the overview artifact | Once the decisions are final; again for a changed plan | architecture | 4 |
-| 5 | architecture | `write-architecture` | Agrees the stack and the structure with the user and records them. Writes the architecture with its deployment view, the runbook and the agent docs | After the concept; again for a changed stack | new sprint | 5 |
+| 5 | architecture | `write-architecture` | Writes the architecture, the runbook and the agent docs from the user's choices of stack and structure. It designs nothing on its own | After the concept; again for a changed stack | new sprint | 5 |
 | 6 | new sprint | `new-sprint` | Plans the next sprint's tasks, or adds a task to the open sprint | When no sprint is open; "add a task" any time | design task | 6 |
 | 7 | design task | `design-task` | Brainstorms a task with the user and writes its design | For each task, in the board's order | build task | 7 |
 | 8 | build task | `build-task` | Builds the task and makes sure it works. A problem that needs thought becomes an issue | After the task's design | close task | 8a |
@@ -17,7 +17,7 @@
 | 11 | close sprint | `close-sprint` | Checks the sprint's critical changes, defers what is left, brings the main documents in line, and seals the sprint | When the sprint's work is done | release when there is something to ship; else review when it is due; else new sprint | 9b |
 | 12 | release | `ship-release` | Ships by the runbook, checks the release and records it. Rolls back a release that fails its check | After a sprint's close, and any time | review when it is due; else new sprint | — |
 | 13 | review | `review-project` | Ranks improvements to the architecture, the UX and the features in an artifact, with badges. The user's picks become stories | Suggested after two or three sprint closes | new sprint; decide for a pick that changes the direction, architecture for one that changes the stack or the modules | 10 |
-| 14 | demo | `record-demo` | Records a walkthrough of the project's UI | Any time the project has a UI | the step the user was on | Bonus |
+| 14 | demo | `record-demo` | Records a walkthrough of the feature the user asks for, or the whole UI | Any time the project has a UI | the step the user was on | Bonus |
 
 The last column is the step's number in the owner's idea, which has two steps 8 and two steps 9.
 

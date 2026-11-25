@@ -1,8 +1,9 @@
 // The user guides (REL-1): each skill's guide, docs/guides/<skill>.md, and the README's table of the cycle, written from
-// the skill's own file and the cycle's table, skills/method/references/cycle.md, and nothing else. A guide's first line
-// opens the block that this script writes, its end marker closes it, and the rest of the file is written by hand, such
-// as a "Good to know". The README's block is its table of the cycle. scripts/check.mjs holds every block to what this
-// script writes now, by guideProblems below, so that a guide can't drift from its skill.
+// the skill's own file and the cycle's table, skills/method/references/cycle.md, and nothing else but the words of an
+// example call, EXAMPLE_ASKS below. A guide's first line opens the block that this script writes, its end marker closes
+// it, and the rest of the file is written by hand, such as a "Good to know". The README's block is its table of the
+// cycle, with an example of each skill's call. scripts/check.mjs holds every block to what this script writes now, by
+// guideProblems below, so that a guide can't drift from its skill.
 //
 // Usage, from anywhere in the repository:
 //   npm run guides
@@ -154,15 +155,31 @@ export function guideBlock(skill, parts, cycle, skills) {
   ];
 }
 
-// The README's block: the cycle's table, one row a step, each skill linked to its guide.
-export function readmeBlock(cycle) {
+// What a user types after a skill's name in the README's examples, from the worked example, Shelf: an idea, a topic,
+// a task's id or a feature. A skill with no line here is called by its name alone.
+export const EXAMPLE_ASKS = {
+  'init-project': 'An offline-first book tracker',
+  'research-topics': 'ISBN lookup APIs',
+  'design-task': 'OPS-1',
+  'build-task': 'OPS-1',
+  'close-task': 'OPS-1',
+  'draft-pr': 'OPS-1',
+  'record-demo': 'Adding a book by ISBN',
+};
+
+// A skill's call on Claude Code, with its example's words where it has any.
+export const exampleCall = (skill, asks = EXAMPLE_ASKS) => `/gradatim:${skill}${asks[skill] ? ` ${asks[skill]}` : ''}`;
+
+// The README's block: the cycle's table, one row a step, each skill linked to its guide, with an example of its call.
+export function readmeBlock(cycle, asks = EXAMPLE_ASKS) {
   return [
     README_START,
     '',
-    '| # | Step | Skill | What it does |',
-    '|---|---|---|---|',
+    '| # | Step | Skill | What it does | Example |',
+    '|---|---|---|---|---|',
     ...cycle.map(
-      (row) => `| ${row.number} | ${row.step} | [\`${row.skill}\`](${GUIDES_DIR}/${row.skill}.md) | ${rebasedLine(row.does, CYCLE_DIR, '.', `${CYCLE_DIR}/cycle.md`)} |`,
+      (row) =>
+        `| ${row.number} | ${row.step} | [\`${row.skill}\`](${GUIDES_DIR}/${row.skill}.md) | ${rebasedLine(row.does, CYCLE_DIR, '.', `${CYCLE_DIR}/cycle.md`)} | \`${exampleCall(row.skill, asks)}\` |`,
     ),
     '',
     END,

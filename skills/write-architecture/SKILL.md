@@ -1,6 +1,6 @@
 ---
 name: write-architecture
-description: "Agrees a Gradatim project's stack and structure with the user and writes its architecture, runbook and agent docs, recording each choice. Use when the user asks for Gradatim's architecture step, to choose or change the stack or the structure, or to add an agent doc."
+description: "Writes a Gradatim project's architecture, runbook and agent docs from the stack and structure the user chooses, recording each choice. It designs nothing on its own. Use when the user asks for Gradatim's architecture step, to choose or change the stack or the structure, or to add an agent doc."
 license: MIT
 ---
 

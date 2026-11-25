@@ -20,7 +20,7 @@ Building with AI coding agents usually breaks down in two places: you stitch tog
 - **Anti-drift enforced by scripts:** Closing a task or sprint updates stale documents from the concept down to the tasks, and zero-dependency Node checks verify links, IDs, task statuses, and sealed files. No `npm install` required.
 - **Sealed history that stays true:** Once a task or sprint closes, its task file and design are sealed. Later decisions move forward in new records instead of rewriting why past code was built.
 - **Built for existing codebases too:** Start on a repo that already has code without moving a single file. Gradatim scans the code once into a cited report, isolates its own docs in `docs/gradatim/` when paths collide, and reaches your first task design in one agreement.
-- **Visual HTML artifacts and UI demos:** Generate standalone HTML pages for project overviews, large PR explainers, and ranked review reports with badges, plus paced Playwright walkthrough videos ready to drag into a pull request.
+- **Visual HTML artifacts and UI demos:** Generate standalone HTML pages for project overviews, large PR explainers, and ranked review reports with badges, plus paced Playwright walkthrough videos of the feature you ask for, ready to drag into a pull request.
 - **You stay in control:** Every writing step drafts first and waits for your explicit agreement. Solo or team workflow, git writes, artifact publishing, and subagent models all defer to your own rules in `AGENTS.md`.
 
 ## Install
@@ -75,10 +75,10 @@ Run `/gradatim:hello` ([guide](docs/guides/hello.md)) to verify your install, or
 # Sets up git and AGENTS.md, shows the cycle, and proposes research topics
 
 /gradatim:research-topics
-# Writes cited reports with risks and trade-offs; decides nothing
+# Researches your idea's risks, trade-offs, market and more in cited reports; decides nothing
 
 /gradatim:decide-direction
-# Asks questions until you both agree, records decisions, and runs the doc sync
+# Asks about your project's direction until you both agree, then records the decisions
 ```
 
 You can also ask for any step in your own words, such as "research these topics": a step that writes asks before it writes. On the other hosts, call skills by name as [the install guide](docs/guides/install.md#calling-a-skill) shows.
@@ -89,48 +89,14 @@ Both start with the same command: `/gradatim:init-project`.
 
 | Starting from | What Gradatim does | Path to your first build |
 |---|---|---|
-| **A new idea** | Sets up git and `AGENTS.md` with your idea, solo or team workflow, and the document order, then proposes topics to research. | Full cycle: `research` → `decide` → `concept` → `architecture` → `new sprint` → `design task`. |
-| **An existing codebase** | Keeps every existing file untouched. Where your files hold Gradatim's paths, Gradatim stores its documents in `docs/gradatim/`. Choose the quick start or the full cycle. | Quick start: one read-only scan of your code (runs nothing, opens no secret files) and one agreement reach `design task`. |
+| **A new idea** | Sets up git and `AGENTS.md` with your idea, solo or team workflow, and the document order, then proposes topics to research. | Full cycle: `research-topics` → `decide-direction` → `write-concept` → `write-architecture` → `new-sprint` → `design-task` → `build-task` → `close-task`. |
+| **An existing codebase** | Keeps every existing file untouched. Where your files hold Gradatim's paths, Gradatim stores its documents in `docs/gradatim/`. Choose the quick start or the full cycle. | Quick start: `init-project` runs it when you pick "From what's here", with one read-only scan of your code (runs nothing, opens no secret files) and one agreement. Then `design-task` → `build-task` → `close-task`. |
 
 ## The cycle
 
 Fourteen steps in three phases, each run by its own skill.
 
-```mermaid
-flowchart LR
-  subgraph S1["1. Foundation (once)"]
-    direction TB
-    init["1. init"] --> research["2. research"]
-    research --> decide["3. decide"]
-    decide --> concept["4. concept"]
-    concept --> arch["5. architecture"]
-  end
-
-  subgraph S2["2. Delivery loop (per sprint)"]
-    direction TB
-    sprint["6. new sprint"] --> design["7. design task"]
-    design --> build["8. build task"]
-    build --> close["9. close task"]
-    close --> pr["10. draft PR"]
-    pr -.->|"next task"| design
-    pr --> csprint["11. close sprint"]
-  end
-
-  subgraph S3["3. Ship & evolve"]
-    direction TB
-    rel["12. release"]
-    rev["13. review"]
-    demo["14. demo"]
-  end
-
-  arch --> sprint
-  init -.->|"existing repo quick start"| design
-  csprint --> rel
-  rel --> rev
-  rev -.->|"next sprint"| sprint
-  csprint -.->|"next sprint"| sprint
-  pr -.->|"UI change"| demo
-```
+![Gradatim's cycle: three phases and fourteen steps, each labelled with its skill](docs/guides/cycle.svg)
 
 - **The task loop:** design task, build task, close task, and draft PR where a pull request is due, one task at a time, in the order of the open sprint's board.
 - **The sprint loop:** new sprint, the task loops, and close sprint; then release when there is something to ship, and review every two or three sprints.
@@ -140,22 +106,22 @@ Each skill's guide says when to use it, how to call it, what it reads and writes
 
 <!-- generated by npm run guides from cycle.md: edit that, not this block -->
 
-| # | Step | Skill | What it does |
-|---|---|---|---|
-| 1 | init | [`init-project`](docs/guides/init-project.md) | Sets up the project's folder: git, and `AGENTS.md` with the idea, who works on it and the order of the documents. Presents the cycle, or runs the quick start |
-| 2 | research | [`research-topics`](docs/guides/research-topics.md) | Researches the topics the user picks, in cited reports that mark the risks and trade-offs. Decides nothing |
-| 3 | decide | [`decide-direction`](docs/guides/decide-direction.md) | Asks the user questions until you both agree, records the decisions, then runs the sync |
-| 4 | concept | [`write-concept`](docs/guides/write-concept.md) | Writes the concept, the MVP, the roadmap and the phases, and the overview artifact |
-| 5 | architecture | [`write-architecture`](docs/guides/write-architecture.md) | Agrees the stack and the structure with the user and records them. Writes the architecture with its deployment view, the runbook and the agent docs |
-| 6 | new sprint | [`new-sprint`](docs/guides/new-sprint.md) | Plans the next sprint's tasks, or adds a task to the open sprint |
-| 7 | design task | [`design-task`](docs/guides/design-task.md) | Brainstorms a task with the user and writes its design |
-| 8 | build task | [`build-task`](docs/guides/build-task.md) | Builds the task and makes sure it works. A problem that needs thought becomes an issue |
-| 9 | close task | [`close-task`](docs/guides/close-task.md) | Checks the criteria, reviews the code, updates what the task made stale, and seals the task |
-| 10 | draft PR | [`draft-pr`](docs/guides/draft-pr.md) | Opens a draft pull request, with an explainer when it is large |
-| 11 | close sprint | [`close-sprint`](docs/guides/close-sprint.md) | Checks the sprint's critical changes, defers what is left, brings the main documents in line, and seals the sprint |
-| 12 | release | [`ship-release`](docs/guides/ship-release.md) | Ships by the runbook, checks the release and records it. Rolls back a release that fails its check |
-| 13 | review | [`review-project`](docs/guides/review-project.md) | Ranks improvements to the architecture, the UX and the features in an artifact, with badges. The user's picks become stories |
-| 14 | demo | [`record-demo`](docs/guides/record-demo.md) | Records a walkthrough of the project's UI |
+| # | Step | Skill | What it does | Example |
+|---|---|---|---|---|
+| 1 | init | [`init-project`](docs/guides/init-project.md) | Sets up the project's folder: git, and `AGENTS.md` with the idea, who works on it and the order of the documents. Presents the cycle, or runs the quick start | `/gradatim:init-project An offline-first book tracker` |
+| 2 | research | [`research-topics`](docs/guides/research-topics.md) | Researches the idea's risks, trade-offs, market and more, in cited reports. Decides nothing | `/gradatim:research-topics ISBN lookup APIs` |
+| 3 | decide | [`decide-direction`](docs/guides/decide-direction.md) | Asks the user about the project's direction until both agree, then records the decisions | `/gradatim:decide-direction` |
+| 4 | concept | [`write-concept`](docs/guides/write-concept.md) | Writes the concept, the MVP, the roadmap and the phases, and the overview artifact | `/gradatim:write-concept` |
+| 5 | architecture | [`write-architecture`](docs/guides/write-architecture.md) | Writes the architecture, the runbook and the agent docs from the user's choices of stack and structure. It designs nothing on its own | `/gradatim:write-architecture` |
+| 6 | new sprint | [`new-sprint`](docs/guides/new-sprint.md) | Plans the next sprint's tasks, or adds a task to the open sprint | `/gradatim:new-sprint` |
+| 7 | design task | [`design-task`](docs/guides/design-task.md) | Brainstorms a task with the user and writes its design | `/gradatim:design-task OPS-1` |
+| 8 | build task | [`build-task`](docs/guides/build-task.md) | Builds the task and makes sure it works. A problem that needs thought becomes an issue | `/gradatim:build-task OPS-1` |
+| 9 | close task | [`close-task`](docs/guides/close-task.md) | Checks the criteria, reviews the code, updates what the task made stale, and seals the task | `/gradatim:close-task OPS-1` |
+| 10 | draft PR | [`draft-pr`](docs/guides/draft-pr.md) | Opens a draft pull request, with an explainer when it is large | `/gradatim:draft-pr OPS-1` |
+| 11 | close sprint | [`close-sprint`](docs/guides/close-sprint.md) | Checks the sprint's critical changes, defers what is left, brings the main documents in line, and seals the sprint | `/gradatim:close-sprint` |
+| 12 | release | [`ship-release`](docs/guides/ship-release.md) | Ships by the runbook, checks the release and records it. Rolls back a release that fails its check | `/gradatim:ship-release` |
+| 13 | review | [`review-project`](docs/guides/review-project.md) | Ranks improvements to the architecture, the UX and the features in an artifact, with badges. The user's picks become stories | `/gradatim:review-project` |
+| 14 | demo | [`record-demo`](docs/guides/record-demo.md) | Records a walkthrough of the feature the user asks for, or the whole UI | `/gradatim:record-demo Adding a book by ISBN` |
 
 <!-- end of the generated block -->
 
