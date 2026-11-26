@@ -13,6 +13,11 @@
   ],
   "license": "MIT",
   "author": "Ilkay Citak",
+  "homepage": "https://github.com/citakilkay/gradatim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/citakilkay/gradatim.git"
+  },
   "type": "module",
   "main": ".opencode/plugins/gradatim.js",
   "files": [
