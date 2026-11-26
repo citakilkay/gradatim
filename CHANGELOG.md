@@ -4,6 +4,16 @@ Every notable change to Gradatim, newest first. The format follows [Keep a Chang
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-26
+
+### Added
+
+- An icon, for the plugin directories and hosts that show one.
+
+### Changed
+
+- On Claude Code, Gradatim's description now says it is a Claude Code plugin, and its marketplace's description names Gradatim.
+
 ## [1.0.0] - 2026-11-26
 
 The first public release.

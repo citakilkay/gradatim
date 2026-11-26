@@ -69,12 +69,13 @@ if (!KEBAB.test(name ?? '') || name.length > 64)
   error('package.json', `name "${name}" isn't 1 to 64 lowercase letters, digits and single hyphens`);
 if (!SEMVER.test(version ?? '')) error('package.json', `version "${version}" isn't a semantic version`);
 
-// One name, one version, one license and one description, in every manifest that has the keys.
+// One name, one version and one license in every manifest that has the keys. Two descriptions: the root plugin.json
+// says package.json's, and Claude Code's manifest, which says it is a Claude Code plugin, gives its marketplace entry's.
 for (const [path, manifest] of [['plugin.json', agentPlugin], ['.claude-plugin/plugin.json', claudePlugin]]) {
   if (!manifest) continue;
   if (manifest.name !== name) error(path, `name "${manifest.name}" differs from package.json's "${name}"`);
   if (manifest.version !== version) error(path, `version "${manifest.version}" differs from package.json's "${version}"`);
-  if (manifest.description !== pkg.description) warn(path, `the description differs from package.json's`);
+  if (path === 'plugin.json' && manifest.description !== pkg.description) warn(path, `the description differs from package.json's`);
 }
 for (const [path, manifest] of [['package.json', pkg], ['plugin.json', agentPlugin], ['.claude-plugin/plugin.json', claudePlugin]]) {
   if (!manifest) continue;
@@ -131,6 +132,8 @@ if (claudeMarket) {
   if (entry && 'version' in entry && entry.version !== version)
     error(at, `version "${entry.version}" differs from package.json's "${version}"`);
   if (entry && entry.source !== './') warn(at, `source "${entry.source}" isn't this repository's root`);
+  if (entry && claudePlugin && entry.description !== claudePlugin.description)
+    warn(at, `the plugin entry's description differs from .claude-plugin/plugin.json's`);
 }
 if (codexMarket) {
   const at = '.agents/plugins/marketplace.json';

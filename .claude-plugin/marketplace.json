@@ -1,6 +1,6 @@
 {
   "name": "gradus",
-  "description": "Gradatim's own marketplace, which holds the Gradatim plugin.",
+  "description": "The marketplace of Gradatim, a Claude Code plugin that takes a software project from its first idea to release, step by step.",
   "owner": {
     "name": "Ilkay Citak"
   },
@@ -8,8 +8,8 @@
     {
       "name": "gradatim",
       "source": "./",
-      "description": "Takes a software project from its first idea to release with an AI coding agent, step by step, and keeps every document true as the work moves.",
-      "version": "1.0.0"
+      "description": "A Claude Code plugin that takes a software project from its first idea to release, step by step, and keeps every document true as the work moves.",
+      "version": "1.0.1"
     }
   ]
 }
