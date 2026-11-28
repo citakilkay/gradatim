@@ -9,7 +9,7 @@
       "name": "gradatim",
       "source": "./",
       "description": "A Claude Code plugin that takes a software project from its first idea to release, step by step, and keeps every document true as the work moves.",
-      "version": "1.0.1"
+      "version": "1.0.2"
     }
   ]
 }

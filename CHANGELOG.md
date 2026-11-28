@@ -4,6 +4,14 @@ Every notable change to Gradatim, newest first. The format follows [Keep a Chang
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-11-28
+
+### Changed
+
+- Where a rule of yours bars git writes, `build-task` and `close-task` give their commands on the branch they would use themselves, such as the task's own branch from your development cycle, with `git switch -c` first where the branch is new.
+- `close-task` names `draft-pr` next wherever your development cycle's Pull requests line opens a pull request for each task, under such a rule too.
+- `new-sprint` lists the tasks that only its larger scope adds above the options, so that each option stays on one line.
+
 ## [1.0.1] - 2026-11-26
 
 ### Added

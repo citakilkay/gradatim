@@ -58,7 +58,7 @@ Read the project's state from its documents, never from memory:
 - **A task under way** is `in-progress` on the board.
 - **A task built** is `in-progress`, with a row in its log that opens "Built by the build task step": close task comes next.
 - **A task closed** is `completed` or `completed-as-partial`: where a pull request is due, draft PR comes next until its sprint's log has a row with its pull request's link.
-- **A pull request is due** for each task, unless `AGENTS.md` says one developer works on the project and the task was built on the base, with no branch of its own, as its start row says. The project's rules may still open one for every task, or none.
+- **A pull request is due** as the development cycle's Pull requests line says, under a rule that bars git writes too. With no such line, it is due for each task but one developer's task built on the base, as `AGENTS.md` and its start row say.
 - **Something to ship:** a task of a closed sprint whose work users run, a setup task's too, which no release in `docs/RELEASES.md` holds yet. Release then comes before review and new sprint.
 - **A review is due** once two sprints have closed after the one that the last row of the Reviews in `docs/sprints/README.md` names, or since the first sprint if no review has run. Suggest it after two closes, and again after three.
 - **The steps done so far** show in which documents exist. [documents.md](documents.md) names the step that creates each.
